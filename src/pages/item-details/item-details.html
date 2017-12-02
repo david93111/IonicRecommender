@@ -3,16 +3,20 @@
     <button menuToggle *ngIf="!selectedItem">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Item Details</ion-title>
+    <ion-title>Game Details</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <h3 text-center *ngIf="selectedItem">
-    {{selectedItem.title}}
-    <ion-icon [name]="selectedItem.icon"></ion-icon>
+    {{selectedItem.name}}
+    <ion-icon name="game-controller-b"></ion-icon>
+    <p>Developed by {{selectedItem.company}}</p>
   </h3>
   <h4 text-center *ngIf="selectedItem">
-    You navigated here from <b>{{selectedItem.title}}</b>
+    This games was released on <b>{{selectedItem.year}}</b>
+  </h4>
+  <h4 text-center *ngIf="selectedItem">
+      The current rate by the community is <b>{{selectedItem.rate}}</b>
   </h4>
 </ion-content>

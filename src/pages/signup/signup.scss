@@ -1,4 +1,4 @@
-page-sigup{
+page-signup{
 
     *, *:before, *:after {
         box-sizing: border-box;
@@ -146,7 +146,7 @@ page-sigup{
         margin: 0;
       }
       
-      #login .button {
+      #signup .button {
         border: 0;
         outline: none;
         border-radius: 0;
@@ -161,7 +161,7 @@ page-sigup{
         transition: all 0.5s ease;
         -webkit-appearance: none;
       }
-      #login .button:hover, #login .button:focus {
+      #signup .button:hover, #signup .button:focus {
         background: #fc500c;
       }
       
@@ -173,6 +173,13 @@ page-sigup{
       .forgot {
         text-align: right;
       }
+
+    .log-in{
+        margin-top: 15px
+    }
+    .log-in .button{
+        background: #1d8266 !important;
+    }
 
 }
 

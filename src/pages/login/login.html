@@ -3,7 +3,7 @@
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title>Hello Ionic</ion-title>
+      <ion-title>Login</ion-title>
     </ion-navbar>
   </ion-header>
   
@@ -22,14 +22,14 @@
             <label>
               <span class="req">*</span>
             </label>
-            <input type="text" name="username" required autocomplete="off"/>
+            <input [(ngModel)]="username" type="text" name="username" required autocomplete="off"/>
           </div>
           <div class="field-name"><Label>Password</Label></div>
           <div class="field-wrap">
             <label>
               <span class="req">*</span>
             </label>
-            <input type="password" name="username" required autocomplete="off"/>
+            <input [(ngModel)]="password" type="password" name="username" required autocomplete="off"/>
           </div>
           
          <!--  <p class="forgot"><a href="#">Forgot Password?</a></p>-->
@@ -37,6 +37,10 @@
           <button class="button button-block" >Log In</button>
           
           </form>
+          
+          <div class="signup">
+            <button class="button button-block" (click)="signup()">Sign Up</button>
+          </div>
 
         </div>
         

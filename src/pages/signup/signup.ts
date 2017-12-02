@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-signup',
@@ -6,8 +8,12 @@ import { Component } from '@angular/core';
 })
 export class SignUpPage {
 
-  constructor() {
+  constructor(public navCtrl:NavController) {
 
+  }
+
+  goLogin(){
+      this.navCtrl.setRoot(LoginPage)
   }
 
 }

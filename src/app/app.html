@@ -2,7 +2,12 @@
 
   <ion-header>
     <ion-toolbar>
-      <ion-title>Pages</ion-title>
+      <ion-title>Menu</ion-title>
+      <ion-buttons end>
+          <button ion-button menuToggle (click)="logout()">
+              <ion-icon name="log-out"></ion-icon>
+          </button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 

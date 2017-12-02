@@ -16,8 +16,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
+  // Validates rootPage based on auth token
+  
   rootPage = LoginPage;
+  
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -30,8 +32,8 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'Home', component: HelloIonicPage },
+      { title: 'My Recommended Games', component: ListPage }
     ];
   }
 
@@ -49,5 +51,10 @@ export class MyApp {
     this.menu.close();
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
+  }
+
+  logout():void{
+    localStorage.removeItem("Auth-Token")
+    this.nav.setRoot(LoginPage)
   }
 }
