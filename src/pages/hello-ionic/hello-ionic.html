@@ -3,20 +3,28 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Hello Ionic</ion-title>
+    <ion-title>IA Game Recommender</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
 
-  <h3>Welcome to your first Ionic app!</h3>
+  <h3>Welcome to the Spark Game Recommender</h3>
 
   <p>
-    This starter project is our way of helping you get a functional app running in record time.
+    This is a project based on microservicea architecture, through the use of spark MlLib
+    for machine learning, focused on colaborative filtering
   </p>
   <p>
-    Follow along on the tutorial section of the Ionic docs!
+    This is the front end, developed on Ionic3 that allows you to comunicate whit the MicroService developed in scala
+    That is incharge of train de ALS model and recommend the games.
+  </p>
+  <p>
+      For now you can only see games recommended to you based on ALS Colaborative Filtering Algorithm,
+      but soon you will have the functionalities to rate a game, like a game, and have recommendations
+      based on similar people based on your favorite selected categories and your owned consoles.
+      <br> Stay tuned for all the soon improvents!
   </p>
 
 </ion-content>
