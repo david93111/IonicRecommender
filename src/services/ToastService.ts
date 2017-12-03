@@ -9,13 +9,13 @@ export class ToastService {
 
     }
 
-    createClosableToast(msg: string){
+    createClosableToast(msg: string,dismisssPageChange: boolean = true){
         let toast = this.toastCtrl.create({
           message: msg,
           position: 'top',
           showCloseButton: true,
           closeButtonText: "OK",
-          dismissOnPageChange: true
+          dismissOnPageChange: dismisssPageChange
         });
     
         toast.present()

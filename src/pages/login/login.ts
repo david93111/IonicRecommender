@@ -49,8 +49,11 @@ export class LoginPage {
       }
     },
     (err) => {
-      console.log('Ocurrio un error, causa: '+ err)
-      this.toastSrv.createClosableToast('Login Error, check your username and password')
+      if(err.status !== undefined && err.status === 401){
+        this.toastSrv.createClosableToast('Invalid Credentials, check your username and password')
+      }else{
+        this.toastSrv.createClosableToast('Error Login, error trying to reach de server. Please try later')
+      }
     })
     //localStorage.removeItem("Access-Token")
   }

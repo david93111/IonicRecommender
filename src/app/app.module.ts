@@ -1,3 +1,4 @@
+import { Profile } from './../pages/profile/profile';
 import { ToastService } from './../services/ToastService';
 import { AllGames } from './../pages/all-games/all-games';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ItemDetailsPage,
     ListPage,
     SignUpPage,
-    AllGames
+    AllGames,
+    Profile    
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ItemDetailsPage,
     ListPage,
     SignUpPage,
-    AllGames
+    AllGames,
+    Profile
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Your Profile</ion-title>
+      </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="profile-icon" text-center *ngIf="user">
+    <ion-icon name="contact"></ion-icon>
+    <br>{{user.name}}
+  </h2>
+  <h3 text-center *ngIf="user">
+    
+    <p><strong>Username:</strong> {{user.username}}</p>
+    <p><strong>Age: </strong> {{user.age}} years</p>
+  </h3>
+  <h4 text-center *ngIf="user">
+      <strong>Current Country:</strong> <b>{{user.country}}</b>
+  </h4>
+  <h4 text-center *ngIf="user">
+      <strong>Gender:</strong> 
+      <b *ngIf="user.gender === 'M'">Male</b>
+      <b *ngIf="user.gender !== 'M'">Female</b>
+  </h4>
+</ion-content>

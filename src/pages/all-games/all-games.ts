@@ -37,16 +37,17 @@ export class AllGames {
     let queryParam = "?limit="+limit+"&skip="+skip
     let url = "http://localhost:8022/recommender/games"+queryParam
     this.http.get(url,options).subscribe(data=>{
-      if(data.status===401){
-        localStorage.removeItem('Auth-Token')
-        this.navCtrl.setRoot(LoginPage)
-      }else{
         this.items = data.json();
-      }
     },
     err =>{
       console.log('Unexpected error obtaining the recomendations' + err);
-      this.toastSrv.createClosableToast("Error trying to bring Game Library, please try later")
+      if(err.status !== undefined && err.status === 401){
+        localStorage.removeItem('Auth-Token')
+        this.toastSrv.createClosableToast('Your current sesion has expired, please log in again.',false)
+        this.navCtrl.setRoot(LoginPage)
+      }else{
+      this.toastSrv.createClosableToast("Error trying to bring Game Library. Please try later")
+      }
     })
   }
 
