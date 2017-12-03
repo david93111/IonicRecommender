@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Recommended Games</ion-title>
+    <ion-title>Games Library</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,8 +11,9 @@
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon name="game-controller-b" item-left></ion-icon>
-      {{item.name}} | <strong>Rate:</strong> {{item.rate}}
+      {{item.name}}
       <div class="item-note" item-right>
+        <Strong>Company: </Strong>{{item.company}} |
         <Strong>Year: </Strong>{{item.year}}
       </div>
     </button>

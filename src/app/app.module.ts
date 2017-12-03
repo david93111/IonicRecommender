@@ -1,3 +1,5 @@
+import { ToastService } from './../services/ToastService';
+import { AllGames } from './../pages/all-games/all-games';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -20,7 +22,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    SignUpPage
+    SignUpPage,
+    AllGames
   ],
   imports: [
     BrowserModule,
@@ -34,11 +37,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    SignUpPage
+    SignUpPage,
+    AllGames
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    ToastService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

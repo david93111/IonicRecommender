@@ -1,3 +1,4 @@
+import { ToastService } from './../../services/ToastService';
 import { Component } from '@angular/core';
 import { Http,Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -14,9 +15,12 @@ export class LoginPage {
 
   private username: string;
   private password: string;
-  private error: string;
 
-  constructor(private http:Http,public navCtrl:NavController, public menu:MenuController) {
+  constructor(
+    private http:Http,
+    public navCtrl:NavController, 
+    public menu:MenuController,
+    public toastSrv:ToastService) {
 
   }
 
@@ -43,12 +47,10 @@ export class LoginPage {
           this.navCtrl.setRoot(HelloIonicPage)
         }
       }
-      console.log("status ->" + data.status)
-      console.log("headers ->" + data.headers.keys())
     },
     (err) => {
       console.log('Ocurrio un error, causa: '+ err)
-      this.error = err
+      this.toastSrv.createClosableToast('Login Error, check your username and password')
     })
     //localStorage.removeItem("Access-Token")
   }

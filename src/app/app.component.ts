@@ -1,3 +1,4 @@
+import { AllGames } from './../pages/all-games/all-games';
 import { Component, ViewChild } from '@angular/core';
 
 import { Platform, MenuController, Nav } from 'ionic-angular';
@@ -33,7 +34,8 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Home', component: HelloIonicPage },
-      { title: 'My Recommended Games', component: ListPage }
+      { title: 'My Recommended Games', component: ListPage },
+      { title: 'Games Library', component: AllGames }
     ];
   }
 

@@ -1,3 +1,4 @@
+import { ToastService } from './../../services/ToastService';
 import { Http,Headers } from '@angular/http';
 import { Component } from '@angular/core';
 
@@ -5,18 +6,17 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { ItemDetailsPage } from '../item-details/item-details';
 import { LoginPage } from '../login/login';
-import { ToastService } from '../../services/ToastService';
 
 @Component({
-  selector: 'page-list',
-  templateUrl: 'list.html'
+  selector: 'all-games',
+  templateUrl: 'all-games.html'
 })
-export class ListPage {
+export class AllGames {
   items: Array<{name: string,company:string, year: string, rate: string}>;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
-    public http: Http, 
+    public http: Http,
     public toastSrv:ToastService) {
 
     this.items = [];
@@ -28,13 +28,14 @@ export class ListPage {
     });
   }
 
-  getRecommendedGamesForUser(){
+  getAllGames(limit:Number,skip:Number){
     let options = { headers: new Headers(
       { 
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('Auth-Token')
       }) };
-    let url = "http://localhost:8022/recommender/recommend/games"
+    let queryParam = "?limit="+limit+"&skip="+skip
+    let url = "http://localhost:8022/recommender/games"+queryParam
     this.http.get(url,options).subscribe(data=>{
       if(data.status===401){
         localStorage.removeItem('Auth-Token')
@@ -45,7 +46,7 @@ export class ListPage {
     },
     err =>{
       console.log('Unexpected error obtaining the recomendations' + err);
-      this.toastSrv.createClosableToast("Error trying to get recommended games, please try later")
+      this.toastSrv.createClosableToast("Error trying to bring Game Library, please try later")
     })
   }
 
@@ -53,7 +54,7 @@ export class ListPage {
     if(!localStorage.getItem('Auth-Token')){
       this.navCtrl.setRoot(LoginPage)
     }
-    this.getRecommendedGamesForUser();
+    this.getAllGames(25,0);
   }
 
   ionViewCanEnter(){
