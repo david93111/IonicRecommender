@@ -16,8 +16,6 @@ export class Profile {
     public navCtrl: NavController,
     public http: Http, 
     public toastSrv:ToastService) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.user = this.getCurrentUser()
   }
 
   getCurrentUser(){
@@ -37,7 +35,7 @@ export class Profile {
         this.toastSrv.createClosableToast('Your current sesion has expired, please log in again.',false)
         this.navCtrl.setRoot(LoginPage)
       }else{
-      this.toastSrv.createClosableToast("Error trying to obtain your user information. Please try later")
+        this.toastSrv.createClosableToast("Error trying to obtain your user information. Please try later")
       }
     })
   }
@@ -45,6 +43,8 @@ export class Profile {
   ionViewWillEnter(){
     if(!localStorage.getItem('Auth-Token')){
       this.navCtrl.setRoot(LoginPage)
+    }else{
+      this.user = this.getCurrentUser()
     }
   }
 }
