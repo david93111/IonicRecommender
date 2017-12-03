@@ -26,6 +26,7 @@ export class LoginPage {
 
   ionViewWillEnter(){
     if(localStorage.getItem('Auth-Token')){
+      this.menu.enable(true)
       this.navCtrl.setRoot(HelloIonicPage)
     }else{
       this.menu.enable(false)

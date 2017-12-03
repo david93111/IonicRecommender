@@ -42,6 +42,7 @@ export class Profile {
 
   ionViewWillEnter(){
     if(!localStorage.getItem('Auth-Token')){
+      this.toastSrv.createClosableToast('Your current sesion has expired, please log in again.',false)
       this.navCtrl.setRoot(LoginPage)
     }else{
       this.user = this.getCurrentUser()

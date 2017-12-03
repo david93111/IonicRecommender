@@ -1,1 +1,1 @@
-### Recommendation System Frontend with ionic3g
+### Recommendation System Frontend with ionic3

@@ -12,10 +12,10 @@
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon name="game-controller-b" item-left></ion-icon>
       {{item.name}}
-      <div class="item-note" item-right>
-        <Strong>Company: </Strong>{{item.company}}
-        <!-- | <Strong>Year: </Strong>{{item.year}}-->
-      </div>
+     <!-- <div class="item-note" item-right>
+        <Strong><ion-icon name="briefcase" ></ion-icon></Strong>{{item.company}}
+         | <Strong>Year: </Strong>{{item.year}}
+      </div>-->
     </button>
   </ion-list>
 </ion-content>

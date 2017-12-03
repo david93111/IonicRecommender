@@ -13,8 +13,8 @@
   </div>
   <div text-center class="by-profile-intro">
       <h5>
-          This section uses your profile information, and look for games that habe been rated
-          or liked by people with a similar profile information (country, gender, age),
+          This section uses your profile information, and look for games that have been rated
+          or liked by people with a similar profile (country, gender, age),
           the recommended games are filtered also by a rate higher than 3.8
       </h5>
   </div>
@@ -23,8 +23,7 @@
       <ion-icon name="game-controller-b" item-left></ion-icon>
       {{item.name}}
       <div class="item-note" item-right>
-        <Strong>Rate: </Strong>{{item.rate}} |
-        <Strong>Year: </Strong>{{item.year}}
+        <Strong><ion-icon name="star" ></ion-icon></Strong>{{item.rate}}
       </div>
     </button>
   </ion-list>

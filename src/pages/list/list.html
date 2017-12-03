@@ -11,9 +11,9 @@
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon name="game-controller-b" item-left></ion-icon>
-      {{item.name}} | <strong>Rate:</strong> {{item.rate}}
+      {{item.name}}
       <div class="item-note" item-right>
-        <Strong>Year: </Strong>{{item.year}}
+        <Strong><ion-icon name="star" ></ion-icon></Strong>{{item.rate}}
       </div>
     </button>
   </ion-list>

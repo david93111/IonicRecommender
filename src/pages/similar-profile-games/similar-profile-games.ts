@@ -45,22 +45,18 @@ export class SimilarProfileGames {
         this.toastSrv.createClosableToast('Your current sesion has expired, please log in again.',false)
         this.navCtrl.setRoot(LoginPage)
       }else{
-      this.toastSrv.createClosableToast("Error trying to bring games recommendation based on similar users. Please try later")
+        this.toastSrv.createClosableToast("Error trying to bring games recommendation based on similar users. Please try later")
       }
     })
   }
 
   ionViewWillEnter(){
     if(!localStorage.getItem('Auth-Token')){
+      this.toastSrv.createClosableToast('Your current sesion has expired, please log in again.',false)
       this.navCtrl.setRoot(LoginPage)
+    }else{
+      this.getRecommendedGamesBySimilarUsers();
     }
-    this.getRecommendedGamesBySimilarUsers();
   }
 
-  ionViewCanEnter(){
-    if(localStorage.getItem('Auth-Token')){
-      return true
-    }
-    return false
-  }
 }

@@ -52,15 +52,11 @@ export class ListPage {
 
   ionViewWillEnter(){
     if(!localStorage.getItem('Auth-Token')){
+      this.toastSrv.createClosableToast('Your current sesion has expired, please log in again.',false)
       this.navCtrl.setRoot(LoginPage)
+    }else{
+      this.getRecommendedGamesForUser();
     }
-    this.getRecommendedGamesForUser();
   }
 
-  ionViewCanEnter(){
-    if(localStorage.getItem('Auth-Token')){
-      return true
-    }
-    return false
-  }
 }
