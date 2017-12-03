@@ -10,6 +10,7 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Profile } from '../pages/profile/profile';
+import { SimilarProfileGames } from '../pages/similar-profile-games/similar-profile-games';
 
 
 @Component({
@@ -37,7 +38,8 @@ export class MyApp {
       { title: 'Profile', component: Profile },
       { title: 'Home', component: HelloIonicPage },
       { title: 'Games Library', component: AllGames },
-      { title: 'My Recommended Games', component: ListPage }
+      { title: 'IA Recommendations', component: ListPage },
+      { title: 'By Profile Recommendations' , component: SimilarProfileGames}
     ];
   }
 

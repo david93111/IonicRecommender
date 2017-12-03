@@ -8,10 +8,10 @@ import { ItemDetailsPage } from '../item-details/item-details';
 import { LoginPage } from '../login/login';
 
 @Component({
-  selector: 'page-all-games',
-  templateUrl: 'all-games.html'
+  selector: 'page-similar-profile-games',
+  templateUrl: 'similar-profile-games.html'
 })
-export class AllGames {
+export class SimilarProfileGames {
   items: Array<{name: string,company:string, year: string, rate: string}>;
   constructor(
     public navCtrl: NavController, 
@@ -28,14 +28,13 @@ export class AllGames {
     });
   }
 
-  getAllGames(limit:Number,skip:Number){
+  getRecommendedGamesBySimilarUsers(){
     let options = { headers: new Headers(
       { 
         'Content-Type': 'application/json',
         'Authorization': localStorage.getItem('Auth-Token')
       }) };
-    let queryParam = "?limit="+limit+"&skip="+skip
-    let url = "http://localhost:8022/recommender/games"+queryParam
+    let url = "http://localhost:8022/recommender/recommend/byprofile"
     this.http.get(url,options).subscribe(data=>{
         this.items = data.json();
     },
@@ -46,7 +45,7 @@ export class AllGames {
         this.toastSrv.createClosableToast('Your current sesion has expired, please log in again.',false)
         this.navCtrl.setRoot(LoginPage)
       }else{
-      this.toastSrv.createClosableToast("Error trying to bring Game Library. Please try later")
+      this.toastSrv.createClosableToast("Error trying to bring games recommendation based on similar users. Please try later")
       }
     })
   }
@@ -55,7 +54,7 @@ export class AllGames {
     if(!localStorage.getItem('Auth-Token')){
       this.navCtrl.setRoot(LoginPage)
     }
-    this.getAllGames(25,0);
+    this.getRecommendedGamesBySimilarUsers();
   }
 
   ionViewCanEnter(){

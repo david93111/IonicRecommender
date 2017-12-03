@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>By Profile Recommendations</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding text-center class="by-profile-icon">
+    <ion-icon name="people"></ion-icon>
+  </div>
+  <div text-center class="by-profile-intro">
+      <h5>
+          This sections uses your profile information, and look for games that habe been rated
+          or liked by people with a similar profile information (country, gender, age),
+          the recommended games are filtered also by a rate higher than 3.8
+      </h5>
+  </div>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon name="game-controller-b" item-left></ion-icon>
+      {{item.name}}
+      <div class="item-note" item-right>
+        <Strong>Rate: </Strong>{{item.rate}} |
+        <Strong>Year: </Strong>{{item.year}}
+      </div>
+    </button>
+  </ion-list>
+</ion-content>

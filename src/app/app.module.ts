@@ -1,3 +1,4 @@
+import { SimilarProfileGames } from './../pages/similar-profile-games/similar-profile-games';
 import { Profile } from './../pages/profile/profile';
 import { ToastService } from './../services/ToastService';
 import { AllGames } from './../pages/all-games/all-games';
@@ -25,7 +26,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     SignUpPage,
     AllGames,
-    Profile    
+    Profile,
+    SimilarProfileGames   
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     SignUpPage,
     AllGames,
-    Profile
+    Profile,
+    SimilarProfileGames
   ],
   providers: [
     StatusBar,
