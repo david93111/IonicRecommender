@@ -8,6 +8,16 @@
 </ion-header>
 
 <ion-content>
+    <div padding text-center class="by-ia-icon">
+        <ion-icon name="podium"></ion-icon>
+      </div>
+      <div text-center class="by-ia-intro">
+          <h5>
+              This section uses the Training Spark Model to generate recommendantions 
+              through colaborative filtering (ALS) based on the users ratings 
+              and also games that you have rated
+          </h5>
+      </div>
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon name="game-controller-b" item-left></ion-icon>

@@ -1,10 +1,10 @@
   <ion-header>
-    <ion-navbar>
+    <!--<ion-navbar>
       <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title>Login</ion-title>
-    </ion-navbar>
+      <ion-title text-center>Login</ion-title>
+    </ion-navbar>-->
   </ion-header>
   
   
@@ -17,22 +17,14 @@
           <h1>Welcome Back!</h1>
           
           <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
-            <div class="field-name"><Label >Username</Label></div>
+            
             <div class="field-wrap">
-            <label>
-              <span class="req">*</span>
-            </label>
-            <input [(ngModel)]="username" type="text" name="username" required autocomplete="off"/>
-          </div>
-          <div class="field-name"><Label>Password</Label></div>
-          <div class="field-wrap">
-            <label>
-              <span class="req">*</span>
-            </label>
-            <input [(ngModel)]="password" type="password" name="username" required autocomplete="off"/>
-          </div>
-          
-         <!--  <p class="forgot"><a href="#">Forgot Password?</a></p>-->
+            <input [(ngModel)]="username" type="text" name="username" placeholder="Username" required autocomplete="off"/>
+            </div>
+            <div class="field-wrap">
+              <input [(ngModel)]="password" type="password" name="username" placeholder="Password" required autocomplete="off"/>
+            </div>
+          <!--  <p class="forgot"><a href="#">Forgot Password?</a></p>-->
           
           <button class="button button-block" >Log In</button>
           

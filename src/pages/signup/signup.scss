@@ -4,15 +4,6 @@ page-signup{
         box-sizing: border-box;
       }
       
-      html {
-        overflow-y: scroll;
-      }
-      
-      body {
-        background: #c1bdba;
-        font-family: 'Titillium Web', sans-serif;
-      }
-      
       a {
         text-decoration: none;
         color: #1ab188;
@@ -22,14 +13,17 @@ page-signup{
       a:hover {
         color: #179b77;
       }
+
+      .scroll-content{
+         background: #0b1e31; 
+      }
       
       .form {
-        background: rgba(19, 35, 47, 0.9);
+        background: transparent;
         padding: 40px;
         max-width: 600px;
         margin: 40px auto;
         border-radius: 4px;
-        box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
       }
       
       .tab-group {
