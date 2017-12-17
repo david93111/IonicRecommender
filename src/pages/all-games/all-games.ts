@@ -12,7 +12,7 @@ import { LoginPage } from '../login/login';
   templateUrl: 'all-games.html'
 })
 export class AllGames {
-  items: Array<{name: string,company:string, year: string, rate: string}>;
+  items: Array<{name: string,company:string, year: string, rate: string,id:Number}>;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams, 
